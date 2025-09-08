@@ -9,9 +9,11 @@ jobs:
       - name: checkout the code
         uses: actions/checkout@v2
 
+      - name: Create a artifact repository
+        run: mkdir myartifact
+
       - name: upload an artifact
         uses: actions/upload-artifact@v4
-        run: mkdir myartifact
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: .
