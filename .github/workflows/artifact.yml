@@ -11,6 +11,7 @@ jobs:
 
       - name: upload an artifact
         uses: actions/upload-artifact@v4
+        run: mkdir myartifact
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: .
