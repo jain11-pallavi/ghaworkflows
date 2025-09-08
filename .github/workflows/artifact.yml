@@ -3,13 +3,14 @@ on: [push]
 env: 
   ARTIFACT_NAME: myartifact
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    -name: checkout the code
-     uses: actions/checkout@v2
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v2
 
-    -name: upload an artifact
-     uses: actions/upload-artifact@v2
-     with:
-      name: ${{env.ARTIFACT_NAME}}
-      path: .
+      - name: upload an artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: .
